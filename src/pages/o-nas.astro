@@ -154,6 +154,8 @@ import Layout from '../layouts/Layout.astro';
 .about-intro__image {
   aspect-ratio: 4/3;
   overflow: hidden;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-img);
 }
 .about-intro__image img {
   width: 100%;
@@ -165,11 +167,13 @@ import Layout from '../layouts/Layout.astro';
   grid-template-columns: repeat(4, 1fr);
   gap: 0;
   margin-top: 48px;
-  border: 1px solid var(--clr-border);
+  border: 1px solid var(--clr-border-light);
+  border-radius: var(--radius);
+  overflow: hidden;
 }
 .process-step {
   padding: 36px 28px;
-  border-right: 1px solid var(--clr-border);
+  border-right: 1px solid var(--clr-border-light);
 }
 .process-step:last-child { border-right: none; }
 .process-step__num {
@@ -208,7 +212,7 @@ import Layout from '../layouts/Layout.astro';
 
 @media (max-width: 1024px) {
   .process-grid { grid-template-columns: repeat(2, 1fr); }
-  .process-step { border-right: 1px solid var(--clr-border); border-bottom: 1px solid var(--clr-border); }
+  .process-step { border-right: 1px solid var(--clr-border-light); border-bottom: 1px solid var(--clr-border-light); }
   .values-grid { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 768px) {

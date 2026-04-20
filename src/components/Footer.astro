@@ -68,13 +68,14 @@ const year = new Date().getFullYear();
   width: 36px;
   height: 36px;
   background: var(--clr-accent);
-  color: #fff;
+  color: var(--clr-black);
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 18px;
   font-weight: 800;
   flex-shrink: 0;
+  border-radius: var(--radius-sm);
 }
 .footer__logo-name {
   display: flex;
@@ -119,7 +120,7 @@ const year = new Date().getFullYear();
   transition: color 0.2s;
 }
 .footer__nav a:hover,
-.footer__contact a:hover { color: #fff; }
+.footer__contact a:hover { color: var(--clr-accent); }
 .footer__info p { font-size: 14px; color: rgba(255,255,255,0.5); }
 .footer__bottom {
   border-top: 1px solid rgba(255,255,255,0.08);

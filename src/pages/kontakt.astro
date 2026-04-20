@@ -170,9 +170,14 @@ import Layout from '../layouts/Layout.astro';
 }
 .contact-social__link:hover { color: var(--clr-accent); }
 .contact-next {
-  background: var(--clr-bg-alt);
+  background: var(--clr-white);
   padding: 24px;
   border-left: 3px solid var(--clr-accent);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  box-shadow: var(--shadow-card);
+  border-top: 1px solid var(--clr-border-light);
+  border-right: 1px solid var(--clr-border-light);
+  border-bottom: 1px solid var(--clr-border-light);
 }
 .contact-next__label {
   font-size: 11px;
@@ -190,6 +195,9 @@ import Layout from '../layouts/Layout.astro';
 .contact-form-wrap {
   background: var(--clr-bg-alt);
   padding: 40px;
+  border-radius: var(--radius);
+  border: 1px solid var(--clr-border-light);
+  box-shadow: var(--shadow-card);
 }
 .contact-form { display: flex; flex-direction: column; gap: 20px; }
 .contact-form__title { font-size: 22px; font-weight: 700; }
