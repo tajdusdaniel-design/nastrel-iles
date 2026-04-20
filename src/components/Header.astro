@@ -1,0 +1,165 @@
+---
+const nav = [
+  { href: '/',          label: 'Úvod' },
+  { href: '/o-nas',     label: 'O nás' },
+  { href: '/sluzby',    label: 'Služby' },
+  { href: '/realizace', label: 'Realizace' },
+  { href: '/reference', label: 'Reference' },
+  { href: '/kontakt',   label: 'Kontakt' },
+];
+
+const current = Astro.url.pathname.replace(/\/$/, '') || '/';
+---
+
+<header class="header" id="header">
+  <div class="container header__inner">
+    <a href="/" class="header__logo">
+      <span class="header__logo-mark">R</span>
+      <span class="header__logo-text">
+        <strong>R-Interiér</strong>
+        <small>Radim Illéš</small>
+      </span>
+    </a>
+
+    <nav class="header__nav" id="nav">
+      {nav.map(({ href, label }) => {
+        const isActive = href === '/'
+          ? current === '/'
+          : current.startsWith(href);
+        return (
+          <a href={href} class={`header__link${isActive ? ' header__link--active' : ''}`}>
+            {label}
+          </a>
+        );
+      })}
+      <a href="/kontakt" class="btn btn--primary header__cta">Poptat realizaci</a>
+    </nav>
+
+    <button class="header__burger" id="burger" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<style>
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--clr-bg);
+  border-bottom: 1px solid var(--clr-border);
+  height: 68px;
+}
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 68px;
+}
+.header__logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+.header__logo-mark {
+  width: 36px;
+  height: 36px;
+  background: var(--clr-accent);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  flex-shrink: 0;
+}
+.header__logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+.header__logo-text strong {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--clr-text);
+}
+.header__logo-text small {
+  font-size: 11px;
+  color: var(--clr-text-muted);
+  font-weight: 500;
+}
+.header__nav {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.header__link {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--clr-text-muted);
+  padding: 8px 12px;
+  transition: color 0.2s;
+  text-decoration: none;
+}
+.header__link:hover,
+.header__link--active {
+  color: var(--clr-text);
+}
+.header__cta {
+  margin-left: 12px;
+  padding: 10px 20px;
+  font-size: 13px;
+}
+.header__burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+.header__burger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--clr-text);
+  transition: var(--transition);
+}
+
+@media (max-width: 900px) {
+  .header__burger { display: flex; }
+  .header__nav {
+    display: none;
+    position: fixed;
+    top: 68px;
+    left: 0;
+    right: 0;
+    background: var(--clr-bg);
+    border-bottom: 1px solid var(--clr-border);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16px var(--pad-x) 24px;
+    gap: 0;
+  }
+  .header__nav.open { display: flex; }
+  .header__link {
+    width: 100%;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--clr-border);
+    font-size: 15px;
+  }
+  .header__cta { margin: 16px 0 0; width: 100%; justify-content: center; }
+}
+</style>
+
+<script>
+  const burger = document.getElementById('burger');
+  const nav = document.getElementById('nav');
+  burger?.addEventListener('click', () => {
+    const open = nav?.classList.toggle('open');
+    burger.setAttribute('aria-expanded', String(open));
+  });
+</script>

@@ -1,0 +1,144 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="footer">
+  <div class="container footer__inner">
+    <div class="footer__brand">
+      <div class="footer__logo">
+        <span class="footer__logo-mark">R</span>
+        <span class="footer__logo-name">
+          <strong>R-Interiér</strong>
+          <small>Radim Illéš</small>
+        </span>
+      </div>
+      <p class="footer__tagline">Zakázkové truhlářství.<br />Praxe od roku 1998.</p>
+    </div>
+
+    <div class="footer__nav">
+      <p class="footer__nav-label">Navigace</p>
+      <a href="/">Úvod</a>
+      <a href="/o-nas">O nás</a>
+      <a href="/sluzby">Služby</a>
+      <a href="/realizace">Realizace</a>
+      <a href="/reference">Reference</a>
+      <a href="/kontakt">Kontakt</a>
+    </div>
+
+    <div class="footer__contact">
+      <p class="footer__nav-label">Kontakt</p>
+      <a href="tel:+420736756031">+420 736 756 031</a>
+      <a href="mailto:info@r-interier.eu">info@r-interier.eu</a>
+    </div>
+
+    <div class="footer__info">
+      <p class="footer__nav-label">Firemní údaje</p>
+      <p>R-Interiér Radim Illéš</p>
+      <p>IČO: 67695515</p>
+    </div>
+  </div>
+
+  <div class="footer__bottom">
+    <div class="container footer__bottom-inner">
+      <p>© {year} R-Interiér Radim Illéš</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+.footer {
+  background: var(--clr-bg-dark);
+  color: rgba(255,255,255,0.65);
+  margin-top: auto;
+}
+.footer__inner {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 48px;
+  padding-top: 64px;
+  padding-bottom: 48px;
+}
+.footer__logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+.footer__logo-mark {
+  width: 36px;
+  height: 36px;
+  background: var(--clr-accent);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+.footer__logo-name {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+.footer__logo-name strong {
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+}
+.footer__logo-name small {
+  font-size: 11px;
+  color: rgba(255,255,255,0.4);
+  font-weight: 500;
+}
+.footer__tagline {
+  font-size: 14px;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.4);
+}
+.footer__nav,
+.footer__contact,
+.footer__info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.footer__nav-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+  margin-bottom: 4px;
+}
+.footer__nav a,
+.footer__contact a {
+  font-size: 14px;
+  color: rgba(255,255,255,0.6);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.footer__nav a:hover,
+.footer__contact a:hover { color: #fff; }
+.footer__info p { font-size: 14px; color: rgba(255,255,255,0.5); }
+.footer__bottom {
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+.footer__bottom-inner {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-size: 13px;
+  color: rgba(255,255,255,0.3);
+}
+
+@media (max-width: 900px) {
+  .footer__inner {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+  .footer__brand { grid-column: 1 / -1; }
+}
+@media (max-width: 480px) {
+  .footer__inner { grid-template-columns: 1fr; }
+}
+</style>

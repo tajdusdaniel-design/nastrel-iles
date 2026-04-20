@@ -1,0 +1,193 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const categories = [
+  { id: 'vse', label: 'Vše' },
+  { id: 'kuchyne', label: 'Kuchyně' },
+  { id: 'skrine', label: 'Skříně a nábytek' },
+  { id: 'koupelny', label: 'Koupelny' },
+];
+
+const photos = [
+  { src: '/images/gal-kuchyn-1.jpg', alt: 'Kuchyně na míru', cat: 'kuchyne' },
+  { src: '/images/gal-kuchyn-2.jpg', alt: 'Kuchyňská linka', cat: 'kuchyne' },
+  { src: '/images/gal-kuchyn-3.jpg', alt: 'Kuchyně moderní', cat: 'kuchyne' },
+  { src: '/images/gal-kuchyn-4.jpg', alt: 'Kuchyňský nábytek', cat: 'kuchyne' },
+  { src: '/images/gal-kuchyn-6.jpg', alt: 'Kuchyně realizace', cat: 'kuchyne' },
+  { src: '/images/gal-nabytek-1.jpg', alt: 'Nábytek na míru', cat: 'skrine' },
+  { src: '/images/gal-nabytek-3.jpg', alt: 'Obývací nábytek', cat: 'skrine' },
+  { src: '/images/gal-nabytek-4.jpg', alt: 'Nábytek do pokoje', cat: 'skrine' },
+  { src: '/images/gal-nabytek-5.jpg', alt: 'Vestavěná skříň', cat: 'skrine' },
+  { src: '/images/gal-nabytek-6.jpg', alt: 'Nábytek realizace', cat: 'skrine' },
+  { src: '/images/gal-koupelna-1.jpg', alt: 'Koupelnový nábytek', cat: 'koupelny' },
+];
+---
+
+<Layout title="Realizace" description="Ukázky realizací R-Interiér — kuchyně, vestavěné skříně, nábytek a koupelny na míru.">
+
+  <div class="page-hero">
+    <div class="container">
+      <p class="label page-hero__label">Galerie</p>
+      <h1 class="page-hero__title">Realizace</h1>
+      <p class="page-hero__sub">Ukázky dokončených zakázek — kuchyně, skříně, nábytek, koupelny.</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+
+      <!-- Filter -->
+      <div class="filter-bar reveal">
+        {categories.map((cat) => (
+          <button
+            class={`filter-btn${cat.id === 'vse' ? ' filter-btn--active' : ''}`}
+            data-filter={cat.id}
+          >
+            {cat.label}
+          </button>
+        ))}
+      </div>
+
+      <!-- Grid -->
+      <div class="gal-grid" id="galGrid">
+        {photos.map((photo, i) => (
+          <div
+            class={`gal-item reveal reveal-delay-${(i % 4) + 1}`}
+            data-cat={photo.cat}
+          >
+            <div class="gal-item__inner">
+              <img src={photo.src} alt={photo.alt} loading="lazy" />
+              <div class="gal-item__overlay">
+                <span class="gal-item__cat">
+                  {categories.find(c => c.id === photo.cat)?.label}
+                </span>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section section--dark">
+    <div class="container cta-simple reveal">
+      <div>
+        <p class="label">Líbí se vám naše práce?</p>
+        <h2 class="section-heading">Poptejte vlastní realizaci</h2>
+        <p class="section-sub">Přijedeme, zaměříme a připravíme návrh přesně pro váš prostor.</p>
+      </div>
+      <div class="cta-simple__actions">
+        <a href="/kontakt" class="btn btn--primary">Nezávazně poptat</a>
+        <a href="/sluzby" class="btn btn--secondary-light">Přehled služeb</a>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+.filter-bar {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+.filter-btn {
+  padding: 8px 18px;
+  font-family: var(--font);
+  font-size: 13px;
+  font-weight: 600;
+  border: 1px solid var(--clr-border);
+  background: transparent;
+  cursor: pointer;
+  border-radius: 0;
+  color: var(--clr-text-muted);
+  transition: all 0.2s;
+}
+.filter-btn:hover,
+.filter-btn--active {
+  background: var(--clr-accent);
+  border-color: var(--clr-accent);
+  color: #fff;
+}
+.gal-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+.gal-item { overflow: hidden; }
+.gal-item.hidden { display: none; }
+.gal-item__inner {
+  position: relative;
+  aspect-ratio: 4/3;
+  overflow: hidden;
+}
+.gal-item__inner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.gal-item__inner:hover img { transform: scale(1.05); }
+.gal-item__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(58,36,24,0);
+  display: flex;
+  align-items: flex-end;
+  padding: 16px;
+  transition: background 0.3s;
+}
+.gal-item__inner:hover .gal-item__overlay { background: rgba(58,36,24,0.45); }
+.gal-item__cat {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #fff;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: all 0.3s;
+}
+.gal-item__inner:hover .gal-item__cat {
+  opacity: 1;
+  transform: translateY(0);
+}
+.cta-simple {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 64px;
+  align-items: center;
+}
+.cta-simple__actions { display: flex; flex-direction: column; gap: 12px; min-width: 200px; }
+
+@media (max-width: 768px) {
+  .gal-grid { grid-template-columns: repeat(2, 1fr); }
+  .cta-simple { grid-template-columns: 1fr; }
+}
+@media (max-width: 480px) {
+  .gal-grid { grid-template-columns: 1fr; }
+}
+</style>
+
+<script>
+  const buttons = document.querySelectorAll<HTMLButtonElement>('.filter-btn');
+  const items = document.querySelectorAll<HTMLElement>('.gal-item');
+
+  buttons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const filter = btn.dataset.filter;
+      buttons.forEach((b) => b.classList.remove('filter-btn--active'));
+      btn.classList.add('filter-btn--active');
+      items.forEach((item) => {
+        if (filter === 'vse' || item.dataset.cat === filter) {
+          item.classList.remove('hidden');
+        } else {
+          item.classList.add('hidden');
+        }
+      });
+    });
+  });
+</script>

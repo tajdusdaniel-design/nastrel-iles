@@ -1,0 +1,217 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Kontakt" description="Kontaktujte R-Interiér — +420 736 756 031, info@r-interier.eu. Nezávazná poptávka zakázkového nábytku.">
+
+  <div class="page-hero">
+    <div class="container">
+      <p class="label page-hero__label">Spojte se s námi</p>
+      <h1 class="page-hero__title">Kontakt</h1>
+      <p class="page-hero__sub">Poptávka je nezávazná. Ozvěte se nám a domluvíme první krok.</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container contact-layout">
+
+      <!-- Levý panel - info -->
+      <div class="contact-info reveal">
+
+        <div class="contact-block">
+          <p class="contact-block__label">Telefon</p>
+          <a href="tel:+420736756031" class="contact-block__value contact-block__value--large">
+            +420 736 756 031
+          </a>
+          <p class="contact-block__note">Pracovní dny, 8–17 hod.</p>
+        </div>
+
+        <div class="contact-block">
+          <p class="contact-block__label">E-mail</p>
+          <a href="mailto:info@r-interier.eu" class="contact-block__value">
+            info@r-interier.eu
+          </a>
+        </div>
+
+        <div class="contact-block">
+          <p class="contact-block__label">Firemní údaje</p>
+          <div class="contact-block__firm">
+            <p><strong>R-Interiér Radim Illéš</strong></p>
+            <p>IČO: 67695515</p>
+          </div>
+        </div>
+
+        <div class="contact-social">
+          <p class="contact-block__label">Sledujte nás</p>
+          <div class="contact-social__links">
+            <a
+              href="https://www.facebook.com/R-Interi%C3%A9r-Radim-Ill%C3%A9%C5%A1-372134422804777/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="contact-social__link"
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+              Facebook
+            </a>
+            <a
+              href="https://www.instagram.com/r_interier_radim_illes/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="contact-social__link"
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+              Instagram
+            </a>
+          </div>
+        </div>
+
+        <div class="contact-next reveal">
+          <p class="contact-next__label">Co se stane po odeslání</p>
+          <p class="contact-next__text">
+            Ozveme se vám do 1–2 pracovních dnů. Domluvíme se na zaměření
+            a první konzultaci — přijedeme k vám, podíváme se na prostor
+            a prodiskutujeme, co potřebujete.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Pravý panel - formulář -->
+      <div class="contact-form-wrap reveal">
+        <form class="contact-form" id="contactForm" method="POST" action="mailto:info@r-interier.eu" enctype="text/plain">
+          <h2 class="contact-form__title">Napište nám</h2>
+          <p class="contact-form__sub">Popište vaši zakázku a my vás obratem kontaktujeme.</p>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Jméno</label>
+              <input type="text" id="name" name="jmeno" placeholder="Vaše jméno" required />
+            </div>
+            <div class="form-group">
+              <label for="email">E-mail</label>
+              <input type="email" id="email" name="email" placeholder="vas@email.cz" required />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Telefon (nepovinné)</label>
+            <input type="tel" id="phone" name="telefon" placeholder="+420 xxx xxx xxx" />
+          </div>
+
+          <div class="form-group">
+            <label for="message">Zpráva</label>
+            <textarea
+              id="message"
+              name="zprava"
+              placeholder="Popište, co řešíte — co potřebujete, o jaký typ nábytku jde, přibližné rozměry nebo termín..."
+              required
+            ></textarea>
+          </div>
+
+          <button type="submit" class="btn btn--primary btn--full">Odeslat zprávu</button>
+          <p class="contact-form__note">
+            Odesláním souhlasíte se zpracováním zadaných kontaktních údajů
+            za účelem odpovědi na vašeho dotaz.
+          </p>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.contact-block { display: flex; flex-direction: column; gap: 6px; }
+.contact-block__label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--clr-text-muted);
+}
+.contact-block__value {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--clr-text);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.contact-block__value:hover { color: var(--clr-accent); }
+.contact-block__value--large { font-size: 24px; font-weight: 700; }
+.contact-block__note { font-size: 13px; color: var(--clr-text-muted); }
+.contact-block__firm p { font-size: 15px; color: var(--clr-text); line-height: 1.7; }
+.contact-block__firm strong { font-weight: 700; }
+.contact-social__links {
+  display: flex;
+  gap: 12px;
+  margin-top: 4px;
+}
+.contact-social__link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--clr-text-muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.contact-social__link:hover { color: var(--clr-accent); }
+.contact-next {
+  background: var(--clr-bg-alt);
+  padding: 24px;
+  border-left: 3px solid var(--clr-accent);
+}
+.contact-next__label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--clr-accent);
+  margin-bottom: 8px;
+}
+.contact-next__text {
+  font-size: 14px;
+  color: var(--clr-text-muted);
+  line-height: 1.75;
+}
+.contact-form-wrap {
+  background: var(--clr-bg-alt);
+  padding: 40px;
+}
+.contact-form { display: flex; flex-direction: column; gap: 20px; }
+.contact-form__title { font-size: 22px; font-weight: 700; }
+.contact-form__sub { font-size: 14px; color: var(--clr-text-muted); margin-top: -8px; }
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.btn--full { width: 100%; justify-content: center; }
+.contact-form__note {
+  font-size: 12px;
+  color: var(--clr-text-muted);
+  line-height: 1.6;
+  margin-top: -8px;
+}
+
+@media (max-width: 900px) {
+  .contact-layout { grid-template-columns: 1fr; gap: 48px; }
+}
+@media (max-width: 480px) {
+  .form-row { grid-template-columns: 1fr; }
+  .contact-form-wrap { padding: 24px; }
+}
+</style>

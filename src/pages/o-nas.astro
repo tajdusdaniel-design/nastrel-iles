@@ -1,0 +1,222 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="O nás" description="R-Interiér Radim Illéš — zakázkové truhlářství s praxí od roku 1998. Zaměření, návrh, výroba, montáž.">
+
+  <div class="page-hero">
+    <div class="container">
+      <p class="label page-hero__label">O firmě</p>
+      <h1 class="page-hero__title">R-Interiér Radim Illéš</h1>
+      <p class="page-hero__sub">Zakázkové truhlářství s praxí od roku 1998.</p>
+    </div>
+  </div>
+
+  <!-- Kdo jsme -->
+  <section class="section">
+    <div class="container about-intro">
+      <div class="about-intro__text reveal">
+        <p class="label">Kdo jsme</p>
+        <h2 class="section-heading">Truhlářství, na které se zákazníci vracejí</h2>
+        <div class="divider"></div>
+        <p>
+          R-Interiér je zakázkové truhlářství se sídlem na Moravě.
+          Firma působí od roku 1998 a za tu dobu zrealizovala stovky zakázek
+          pro domácnosti, firmy, provozovny, ordinace i školská zařízení.
+        </p>
+        <p>
+          Zákazníci si nás vybírají, protože zvládneme celý proces —
+          od zaměření prostoru přes 3D návrh až po výrobu a montáž.
+          Výsledná cena je vždy předem jasná a nezměněná.
+        </p>
+        <p>
+          Pracujeme s kvalitními materiály, klademe důraz na přesnost provedení
+          a na to, aby výsledek odpovídal domluvě. Komunikace je věcná a srozumitelná.
+        </p>
+      </div>
+      <div class="about-intro__image reveal">
+        <img src="/images/gal-nabytek-3.jpg" alt="Realizace nábytku na míru" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Jak pracujeme -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="reveal">
+        <p class="label">Průběh zakázky</p>
+        <h2 class="section-heading">Jak spolupráce probíhá</h2>
+        <div class="divider"></div>
+        <p class="section-sub">
+          Čtyři jasné kroky — od prvního kontaktu po hotovou realizaci.
+        </p>
+      </div>
+      <div class="process-grid">
+        <div class="process-step reveal reveal-delay-1">
+          <div class="process-step__num">01</div>
+          <h3>Zaměření</h3>
+          <p>
+            Přijedeme na místo, zaměříme prostor a prodiskutujeme vaše požadavky.
+            Technické detaily — rozvody, okna, dveře — řešíme rovnou na místě.
+          </p>
+        </div>
+        <div class="process-step reveal reveal-delay-2">
+          <div class="process-step__num">02</div>
+          <h3>Návrh</h3>
+          <p>
+            Zpracujeme 3D návrh s půdorysem a vizualizací. Návrh dolaďujeme
+            podle vašich přání. Součástí je i konečná cenová nabídka — pevná a neměnná.
+          </p>
+        </div>
+        <div class="process-step reveal reveal-delay-3">
+          <div class="process-step__num">03</div>
+          <h3>Výroba</h3>
+          <p>
+            Vyrábíme z kvalitních materiálů s důrazem na každý detail.
+            Každý kus je vyrobený přesně na míru podle schválených rozměrů.
+          </p>
+        </div>
+        <div class="process-step reveal reveal-delay-4">
+          <div class="process-step__num">04</div>
+          <h3>Montáž</h3>
+          <p>
+            Doručíme a namontujeme. Záruční doba na práci a materiál je 24 měsíců.
+            Zakázka je hotová přesně tak, jak bylo domluveno.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Na čem si zakládáme -->
+  <section class="section">
+    <div class="container">
+      <div class="reveal">
+        <p class="label">Naše hodnoty</p>
+        <h2 class="section-heading">Na čem si zakládáme</h2>
+        <div class="divider"></div>
+      </div>
+      <div class="values-grid">
+        <div class="value-item reveal reveal-delay-1">
+          <h3>Přesnost</h3>
+          <p>Rozměry, detaily, povrchová úprava — v každém kroku záleží na přesnosti provedení.</p>
+        </div>
+        <div class="value-item reveal reveal-delay-2">
+          <h3>Funkčnost</h3>
+          <p>Nábytek musí dobře vypadat, ale především dobře fungovat v každodenním používání.</p>
+        </div>
+        <div class="value-item reveal reveal-delay-3">
+          <h3>Spolehlivost</h3>
+          <p>Domluvené termíny a podmínky dodržujeme. Zákazník ví, co ho čeká.</p>
+        </div>
+        <div class="value-item reveal reveal-delay-4">
+          <h3>Kvalitní provedení</h3>
+          <p>Používáme materiály a komponenty, které se osvědčily. Žádné zbytečné kompromisy.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section section--dark">
+    <div class="container cta-simple reveal">
+      <div>
+        <p class="label">Máte zájem o spolupráci?</p>
+        <h2 class="section-heading">Ozvěte se nám</h2>
+        <p class="section-sub">Poptávka je nezávazná. Domluvíme se na zaměření a připravíme návrh.</p>
+      </div>
+      <div class="cta-simple__actions">
+        <a href="/kontakt" class="btn btn--primary">Nezávazně poptat</a>
+        <a href="/sluzby" class="btn btn--secondary-light">Přehled služeb</a>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+.about-intro {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+.about-intro__text {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.about-intro__text p {
+  font-size: 16px;
+  line-height: 1.75;
+  color: var(--clr-text-muted);
+}
+.about-intro__image {
+  aspect-ratio: 4/3;
+  overflow: hidden;
+}
+.about-intro__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  margin-top: 48px;
+  border: 1px solid var(--clr-border);
+}
+.process-step {
+  padding: 36px 28px;
+  border-right: 1px solid var(--clr-border);
+}
+.process-step:last-child { border-right: none; }
+.process-step__num {
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--clr-accent);
+  letter-spacing: 0.05em;
+  margin-bottom: 16px;
+}
+.process-step h3 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+.process-step p {
+  font-size: 14px;
+  color: var(--clr-text-muted);
+  line-height: 1.7;
+}
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  margin-top: 48px;
+}
+.value-item { border-top: 2px solid var(--clr-accent); padding-top: 20px; }
+.value-item h3 { font-size: 17px; font-weight: 700; margin-bottom: 10px; }
+.value-item p { font-size: 14px; color: var(--clr-text-muted); line-height: 1.7; }
+.cta-simple {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 64px;
+  align-items: center;
+}
+.cta-simple__actions { display: flex; flex-direction: column; gap: 12px; min-width: 200px; }
+
+@media (max-width: 1024px) {
+  .process-grid { grid-template-columns: repeat(2, 1fr); }
+  .process-step { border-right: 1px solid var(--clr-border); border-bottom: 1px solid var(--clr-border); }
+  .values-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 768px) {
+  .about-intro { grid-template-columns: 1fr; gap: 40px; }
+  .cta-simple { grid-template-columns: 1fr; }
+}
+@media (max-width: 480px) {
+  .process-grid { grid-template-columns: 1fr; }
+  .values-grid { grid-template-columns: 1fr; }
+}
+</style>
