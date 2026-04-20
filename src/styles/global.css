@@ -127,9 +127,9 @@ h1, h2, h3, h4 {
   box-shadow: var(--shadow-btn);
 }
 .btn--primary:hover {
-  background: var(--clr-accent-hover);
-  border-color: var(--clr-accent-hover);
-  box-shadow: 0 4px 14px rgba(91, 192, 190, 0.35);
+  background: #6ECFCD;
+  border-color: #6ECFCD;
+  box-shadow: 0 4px 14px rgba(91, 192, 190, 0.28);
 }
 
 /* Secondary — ghost / outline */
