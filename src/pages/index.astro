@@ -8,9 +8,9 @@ import Layout from '../layouts/Layout.astro';
   <section class="hero">
     <div class="container hero__inner">
       <div class="hero__content">
-        <p class="label">Zakázkové truhlářství · od roku 1998</p>
+        <p class="label hero__label">Zakázkové truhlářství · od roku 1998</p>
         <h1 class="hero__title">
-          Nábytek přesně<br />pro váš prostor
+          Nábytek přesně<br />pro <span class="highlight">Váš prostor</span>
         </h1>
         <p class="hero__sub">
           Navrhujeme, vyrábíme a montujeme nábytek na míru.
@@ -90,11 +90,8 @@ import Layout from '../layouts/Layout.astro';
 
   <!-- ── Proč R-Interiér ── -->
   <section class="section">
-    <div class="container why__inner">
-      <div class="why__image reveal">
-        <img src="/images/process-vyroba.jpg" alt="Výroba nábytku v dílně" />
-      </div>
-      <div class="why__content">
+    <div class="container">
+      <div class="why__content reveal">
         <p class="label">Proč R-Interiér</p>
         <h2 class="section-heading">Jeden dodavatel.<br />Celý proces.</h2>
         <div class="divider"></div>
@@ -102,36 +99,6 @@ import Layout from '../layouts/Layout.astro';
           Zákazník od nás dostane kompletní servis — od zaměření přes 3D návrh
           až po montáž. Bez nutnosti koordinovat více firem, bez zbytečných komplikací.
         </p>
-        <div class="why__points">
-          <div class="why__point reveal reveal-delay-1">
-            <div class="why__point-num">01</div>
-            <div>
-              <strong>Praxe od roku 1998</strong>
-              <p>Dvacet pět let zkušeností v zakázkové výrobě nábytku a realizacích interiérů.</p>
-            </div>
-          </div>
-          <div class="why__point reveal reveal-delay-2">
-            <div class="why__point-num">02</div>
-            <div>
-              <strong>Výroba na míru</strong>
-              <p>Každý kus vzniká podle rozměrů a požadavků konkrétního zákazníka.</p>
-            </div>
-          </div>
-          <div class="why__point reveal reveal-delay-3">
-            <div class="why__point-num">03</div>
-            <div>
-              <strong>Od návrhu po montáž</strong>
-              <p>Zaměříme, navrhneme ve 3D, vyrobíme a namontujeme. Cena je předem jasná a konečná.</p>
-            </div>
-          </div>
-          <div class="why__point reveal reveal-delay-4">
-            <div class="why__point-num">04</div>
-            <div>
-              <strong>Důraz na domluvu a provedení</strong>
-              <p>Věcná komunikace, přesné provedení, výsledek odpovídá domluvě.</p>
-            </div>
-          </div>
-        </div>
         <a href="/o-nas" class="btn btn--secondary" style="margin-top:32px;">Více o firmě</a>
       </div>
     </div>
@@ -299,11 +266,19 @@ import Layout from '../layouts/Layout.astro';
   height: 36px;
   background: var(--clr-border-light);
 }
+.hero__label {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(91,192,190,0.14);
+  color: var(--clr-accent);
+  padding: 6px 14px;
+  border-radius: 8px;
+}
 .hero__image {
   aspect-ratio: 4/3;
   overflow: hidden;
   border-radius: var(--radius);
-  box-shadow: var(--shadow-img);
+  box-shadow: 12px 6px 24px -2px rgba(11,19,43,0.28);
 }
 .hero__image img {
   width: 100%;
@@ -353,45 +328,9 @@ import Layout from '../layouts/Layout.astro';
 .service-card:hover .service-card__arrow { transform: translateX(4px); }
 
 /* ── Why ── */
-.why__inner {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: center;
+.why__content {
+  max-width: 560px;
 }
-.why__image {
-  aspect-ratio: 4/3;
-  overflow: hidden;
-  border-radius: var(--radius);
-  box-shadow: var(--shadow-img);
-}
-.why__image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.why__points {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-  margin-top: 32px;
-}
-.why__point {
-  display: flex;
-  gap: 20px;
-  align-items: flex-start;
-}
-.why__point-num {
-  font-size: 12px;
-  font-weight: 800;
-  color: var(--clr-accent);
-  letter-spacing: 0.05em;
-  flex-shrink: 0;
-  padding-top: 2px;
-  width: 24px;
-}
-.why__point strong { font-size: 15px; font-weight: 700; display: block; margin-bottom: 4px; }
-.why__point p { font-size: 14px; color: var(--clr-text-muted); line-height: 1.6; }
 
 /* ── Gallery ── */
 .gallery-intro { margin-bottom: 40px; }
@@ -511,7 +450,6 @@ import Layout from '../layouts/Layout.astro';
 @media (max-width: 768px) {
   .hero__inner { grid-template-columns: 1fr; gap: 40px; }
   .hero__image { aspect-ratio: 16/9; }
-  .why__inner { grid-template-columns: 1fr; gap: 40px; }
   .ref-grid { grid-template-columns: 1fr; }
   .cta-section { grid-template-columns: 1fr; gap: 40px; }
   .gallery-grid { grid-template-columns: 1fr; }
