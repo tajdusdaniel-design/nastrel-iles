@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600&display=swap');
 
 /* ─── Design tokens ─── */
 :root {
@@ -28,7 +28,9 @@
   --shadow-card:   0 2px 12px rgba(11, 19, 43, 0.07);
 
   /* Typography */
-  --font: 'Manrope', sans-serif;
+  --font:         'Inter', sans-serif;
+  --font-heading: 'Manrope', sans-serif;
+  --clr-accent-deep: #2C8786;
 
   /* Spacing */
   --space-xs:  8px;
@@ -56,6 +58,7 @@ html { scroll-behavior: smooth; }
 
 body {
   font-family: var(--font);
+  font-weight: 600;
   background: var(--clr-bg);
   color: var(--clr-text);
   font-size: 16px;
@@ -68,6 +71,7 @@ img { display: block; max-width: 100%; height: auto; }
 a { color: inherit; text-decoration: none; }
 
 h1, h2, h3, h4 {
+  font-family: var(--font-heading);
   font-weight: 700;
   line-height: 1.15;
   letter-spacing: -0.02em;
@@ -102,7 +106,7 @@ h1, h2, h3, h4 {
   align-items: center;
   gap: 8px;
   padding: 13px 26px;
-  font-family: var(--font);
+  font-family: var(--font-heading);
   font-size: 15px;
   font-weight: 600;
   letter-spacing: 0.01em;
@@ -118,7 +122,7 @@ h1, h2, h3, h4 {
 /* Primary — turquoise fill */
 .btn--primary {
   background: var(--clr-accent);
-  color: var(--clr-black);
+  color: var(--clr-white);
   border-color: var(--clr-accent);
   box-shadow: var(--shadow-btn);
 }
@@ -131,13 +135,13 @@ h1, h2, h3, h4 {
 /* Secondary — ghost / outline */
 .btn--secondary {
   background: transparent;
-  color: var(--clr-black);
-  border-color: var(--clr-black);
+  color: var(--clr-accent-deep);
+  border-color: var(--clr-accent-deep);
   box-shadow: var(--shadow-btn);
 }
 .btn--secondary:hover {
-  background: var(--clr-hover-ghost);
-  box-shadow: 0 4px 14px rgba(11, 19, 43, 0.10);
+  background: rgba(44, 135, 134, 0.07);
+  box-shadow: 0 4px 14px rgba(44, 135, 134, 0.15);
 }
 
 /* Secondary on dark bg */
@@ -154,6 +158,7 @@ h1, h2, h3, h4 {
 /* ─── Label / tag ─── */
 .label {
   display: inline-block;
+  font-family: var(--font-heading);
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.1em;
@@ -165,6 +170,7 @@ h1, h2, h3, h4 {
 
 /* ─── Section heading ─── */
 .section-heading {
+  font-family: var(--font-heading);
   font-size: clamp(28px, 4vw, 42px);
   font-weight: 800;
   margin-bottom: 16px;
