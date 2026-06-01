@@ -23,3 +23,6 @@ pnpm-debug.log*
 # jetbrains setting folder
 .idea/
 .vercel
+
+# generated webp copies (built via npm run optimize:images)
+public/**/*.webp

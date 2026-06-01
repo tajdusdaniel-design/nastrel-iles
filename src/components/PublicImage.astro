@@ -1,0 +1,51 @@
+---
+interface Props {
+  src: string;
+  alt: string;
+  class?: string;
+  loading?: 'lazy' | 'eager';
+  decoding?: 'async' | 'auto' | 'sync';
+  width?: number;
+  height?: number;
+}
+
+const {
+  src,
+  alt,
+  class: className,
+  loading = 'lazy',
+  decoding = 'async',
+  width,
+  height,
+} = Astro.props;
+
+const isRaster = /\.(jpe?g|png)$/i.test(src);
+const webpSrc = isRaster ? src.replace(/\.(jpe?g|png)$/i, '.webp') : null;
+---
+
+{
+  isRaster && webpSrc ? (
+    <picture>
+      <source srcset={webpSrc} type="image/webp" />
+      <img
+        src={src}
+        alt={alt}
+        class={className}
+        loading={loading}
+        decoding={decoding}
+        width={width}
+        height={height}
+      />
+    </picture>
+  ) : (
+    <img
+      src={src}
+      alt={alt}
+      class={className}
+      loading={loading}
+      decoding={decoding}
+      width={width}
+      height={height}
+    />
+  )
+}

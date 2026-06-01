@@ -1,4 +1,5 @@
 ---
+import PublicImage from '../components/PublicImage.astro';
 import Layout from '../layouts/Layout.astro';
 
 const categories = [
@@ -56,7 +57,7 @@ const photos = [
             data-cat={photo.cat}
           >
             <div class="gal-item__inner">
-              <img src={photo.src} alt={photo.alt} loading="lazy" />
+              <PublicImage src={photo.src} alt={photo.alt} loading="lazy" />
               <div class="gal-item__overlay">
                 <span class="gal-item__cat">
                   {categories.find(c => c.id === photo.cat)?.label}
